@@ -1,0 +1,16 @@
+name: poc-nestjs-ci
+on: [push]
+jobs:
+  check-application:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy repository
+        uses: actions/checkout@v2
+      - name: Use Node.js 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.0.0
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Run app
+        run: npm start:dev
