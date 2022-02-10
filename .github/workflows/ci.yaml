@@ -13,4 +13,4 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
       - name: Run app
-        run: npm start:dev
+        run: node index
